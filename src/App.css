@@ -1,11 +1,7 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  color: white;
+} 
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -31,6 +27,14 @@ ul {
   overflow: hidden;
   background-color:#41c9e3;
 }
+.grid-container{
+  background-color: rgb(44, 44, 78);
+  width: 24%;
+  margin-left: 655px;
+  display: flex;
+  color:white;
+  justify-content: space-between;
+}
 
 li {
   float: left;
@@ -44,10 +48,14 @@ li {
   margin-right: 800px
 }
 input[type=text], select {
-  width: 31%;
+  width: 26%;
   padding: 12px 20px;
-  font-size: 18px;
-  margin: 1px 0;
+  font-size: 35px;
+  margin-bottom: 17px;
+  background-color:rgb(44, 44, 78);
+  height: 72px;
+  color: white;
+  margin-left: -10px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -61,8 +69,8 @@ input[type=text], select {
 }
 button{
   height: 86px;
-  width: 135px;
-  font-size: 20px;
+  width: 87px;
+  font-size: 25px;
 }
 
 #button{
