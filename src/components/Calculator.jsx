@@ -4,19 +4,19 @@ const Calculator = () => {
     let[number1,setNumber1] = useState("")
     let[number2,setNumber2] = useState("")
     let[char,setChar] = useState("")
-    const[sum,setSum] = useState("")
+    const[sum,setSum] = useState(number1 + char + number2)
     const handleNumber = (e) => {
-        if(sum !== ""){
-            setNumber1(e.target.value)
-            setNumber2("")
-            setChar("")
-            setSum("")
-        }
-        else if(number1 === "" ){
+        if(number1 === ""){
             setNumber1(e.target.value)
         }
         else if(number2 === "" ){
             setNumber2(e.target.value)
+        }
+        else if(sum !== ""){
+            setNumber1(e.target.value)
+            setNumber2("")
+            setChar("")
+            setSum("")
         }
     }
     const handleChar = (e) => {
@@ -33,6 +33,9 @@ const Calculator = () => {
         number2 = parseInt(number2)
         if(char === "+"){
             setSum(number1 + number2)
+        }
+        else if(char === "-"){
+            setSum(number1 - number2)
         }
         else if(char === "-"){
             setSum(number1 - number2)
@@ -67,8 +70,8 @@ const Calculator = () => {
                     <button value={0} onClick={handleNumber}>0</button>
                     <button value="/" onClick={handleChar}>/</button>
                     <button value="*" onClick={handleChar}>x</button>
-                    <button id="reset" value="RESET" style={{backgroundColor:"#647299",color:"white", width:"150px"}} onClick={handleReset}>RESET</button>
-                    <button id="equal" value="=" className="equal" style={{backgroundColor:"red", width:"150px", marginLeft:"141px"}} onClick={handleSum}>=</button> 
+                    <button className="action" value="RESET" style={{backgroundColor:"#647299",color:"white"}} onClick={handleReset}>RESET</button>
+                    <button className="action" value="=" style={{backgroundColor:"red"}} onClick={handleSum}>=</button> 
                 </div>
         </>
     )
