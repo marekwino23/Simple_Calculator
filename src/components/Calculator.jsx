@@ -68,7 +68,7 @@ const Calculator = () => {
                     <button value="/" onClick={handleChar}>/</button>
                     <button value="*" onClick={handleChar}>x</button>
                     <button id="reset" value="RESET" style={{backgroundColor:"#647299",color:"white", width:"150px"}} onClick={handleReset}>RESET</button>
-                    <button id="equal" value="=" className="equal" style={{backgroundColor:"red", width:"150px", marginLeft:"202%"}} onClick={handleSum}>=</button> 
+                    <button id="equal" value="=" className="equal" style={{backgroundColor:"red", width:"150px", marginLeft:"141px"}} onClick={handleSum}>=</button> 
                 </div>
         </>
     )
