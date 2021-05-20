@@ -48,40 +48,29 @@ const Calculator = () => {
         }   
     }
     return(
-        <div>
-            <input type="text" className="sum" onChange={handleSum} placeholder={number1 + char + number2} value={sum}></input>
-            <div className="grid-container">
-            {/* <button value="(" style={{backgroundColor:"grey"}} onClick={handleChar}>(</button>
-            <button value=")" style={{backgroundColor:"grey"}} onClick={handleChar}>)</button>
-            <button value="%" style={{backgroundColor:"grey"}} onClick={handleChar}>%</button> */}
-            <button className="grid-item" value={7} onClick={handleNumber}>7</button>
-            <button className="grid-item" value={8} onClick={handleNumber}>8</button>
-            <button className="grid-item" value={9} onClick={handleNumber}>9</button>
-            <button value="DEL" style={{backgroundColor:"#7171c3", color:"white"}} onClick={handleReset}>DEL</button>
-            </div>
-            <div className="grid-container">
-            <button className="grid-item" value={4} onClick={handleNumber}>4</button>
-            <button className="grid-item" value={5} onClick={handleNumber}>5</button>
-            <button className="grid-item" value={6} onClick={handleNumber}>6</button>
-            <button value="+" onClick={handleChar}>+</button> 
-            </div>
-            <div className="grid-container">
-            <button className="grid-item" value={1} onClick={handleNumber}>1</button>
-            <button className="grid-item" value={2} onClick={handleNumber}>2</button>
-            <button className="grid-item" value={3} onClick={handleNumber}>3</button>
-            <button value="-" onClick={handleChar}>-</button>
-            </div>
-            <div className="grid-container">
-            <button value="." onClick={handleChar}>.</button>
-            <button value={0} onClick={handleNumber}>0</button>
-            <button value="/" onClick={handleChar}></button>
-            <button value="*" onClick={handleChar}>x</button>
-            </div>
-            <div className="grid-container">
-            <button id="reset" value="RESET" style={{backgroundColor:"#7171c3",color:"white", width:"200px"}} onClick={handleReset}>RESET</button>
-            <button id="equal" value="=" className="equal" style={{backgroundColor:"red", width:"200px"}} onClick={handleSum}>=</button> 
-            </div>
-        </div>
+        <>
+            <input type="text" className="sum" onChange={handleSum} placeholder={number1 + char + number2} value={sum} />
+                <div className="grid-container">
+                    <button className="grid-item" value={7} onClick={handleNumber}>7</button>
+                    <button className="grid-item" value={8} onClick={handleNumber}>8</button>
+                    <button className="grid-item" value={9} onClick={handleNumber}>9</button>
+                    <button value="DEL" style={{backgroundColor:"#7171c3", color:"white"}} onClick={handleReset}>DEL</button>
+                    <button className="grid-item" value={4} onClick={handleNumber}>4</button>
+                    <button className="grid-item" value={5} onClick={handleNumber}>5</button>
+                    <button className="grid-item" value={6} onClick={handleNumber}>6</button>
+                    <button value="+" onClick={handleChar}>+</button> 
+                    <button className="grid-item" value={1} onClick={handleNumber}>1</button>
+                    <button className="grid-item" value={2} onClick={handleNumber}>2</button>
+                    <button className="grid-item" value={3} onClick={handleNumber}>3</button>
+                    <button value="-" onClick={handleChar}>-</button>
+                    <button value="." onClick={handleChar}>.</button>
+                    <button value={0} onClick={handleNumber}>0</button>
+                    <button value="/" onClick={handleChar}>/</button>
+                    <button value="*" onClick={handleChar}>x</button>
+                    <button id="reset" value="RESET" style={{backgroundColor:"#647299",color:"white", width:"150px"}} onClick={handleReset}>RESET</button>
+                    <button id="equal" value="=" className="equal" style={{backgroundColor:"red", width:"150px", marginLeft:"202%"}} onClick={handleSum}>=</button> 
+                </div>
+        </>
     )
 }
 
