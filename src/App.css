@@ -18,11 +18,10 @@
   width: 22%;
   padding: 12px 20px;
   font-size: 35px;
-  margin-bottom: 17px;
   background-color:rgb(44, 44, 78);
   height: 72px;
   color: white;
-  margin-right: 69px;
+  margin-right: 73px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -39,7 +38,7 @@
     background-color: rgb(44, 44, 78);
     width: 95%;
     margin-left: 2px;
-    grid-column-gap: 43px;
+    grid-column-gap: 64px;
     margin-top: 2px;
     height: 528px;
     display: grid;
@@ -47,8 +46,11 @@
   button{
     width: 73px;
   }
+  .equal{
+    margin-left: 9px;
+  }
   input[type=text]{
-    width: 359px;
+    width: 422px;
   }
 } 
 
