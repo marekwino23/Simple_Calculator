@@ -12,6 +12,11 @@ const Keyboard = () => {
         setOperation("");
     }
 
+    const handleDelete = () => {
+        setOperation(operation.split("").splice(0,operation.length - 1).join(""))
+        console.log(operation)
+    }
+
     const handleChange = (e) => {
         console.log(e.target.value)
         if(!/\d/.test(e.target.value) && !/[-+/*]/.test(e.target.value)) {
@@ -102,7 +107,7 @@ const Keyboard = () => {
                     <button name="seven" className="grid-item" value={7} onClick={onClick}>7</button>
                     <button className="grid-item" value={8} onClick={onClick}>8</button>
                     <button className="grid-item" value={9} onClick={onClick}>9</button>
-                    <button value="DEL" style={{backgroundColor:"#7171c3", color:"white"}} onClick={handleReset}>DEL</button>
+                    <button value="DEL" style={{backgroundColor:"#7171c3", color:"white"}} onClick={handleDelete}>DEL</button>
                     <button className="grid-item" value={4} onClick={onClick}>4</button>
                     <button className="grid-item" value={5} onClick={onClick}>5</button>
                     <button className="grid-item" value={6} onClick={onClick}>6</button>
