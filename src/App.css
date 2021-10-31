@@ -9,6 +9,13 @@
   width: 320px;
 } 
 
+button:hover{
+  background-color: red;
+}
+
+body{
+  margin-top: 43px;
+}
 .grid-container {
   display: grid;
   background-color: #2c2c4e;

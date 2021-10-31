@@ -1,17 +1,19 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 
-const Calculator = () => {
+const Keyboard = () => {
     const ref = useRef();
     const [operation, setOperation] = useState("");
-    const [result, setResult] = useState(0);
     const onClick = (e) => {
-            const math = `${operation}${e.target.value}`; 
+            const math = `${e.target.value}${operation}`; 
             setOperation(math);
+            console.log(operation, e.target.value)
     }
     const handleReset = () => {
         setOperation("");
     }
+
     const handleChange = (e) => {
+        console.log(e.target.value)
         if(!/\d/.test(e.target.value) && !/[-+/*]/.test(e.target.value)) {
             return;
         }
@@ -19,6 +21,7 @@ const Calculator = () => {
 
         if(operatorIndex === -1) {
             setOperation(e.target.value);
+            console.log(operation)
         } else {
             const number = +operation.slice(operatorIndex+1);
             const regex1 = new RegExp(/[0-9]/, 'g' );
@@ -75,27 +78,27 @@ const Calculator = () => {
         }   
     }, [ operation ]);
 
-    useEffect(() => {
-        document.addEventListener('keydown', function(e) {
-            if(e.key === 'Backspace') {
-                const newOperation = operation.length ? operation.substring(0, operation.length -1) : operation;
-                setOperation(newOperation);
-                return;
-            }
-            if(!/[\d-+/*=]/.test(e.key)) {
-                return;
-            }
-            if(e.key === '=') {
-                handleResult();
-            } else {
-               setOperation(`${operation}${e.key}`);
-            }
-        });
-    }, [ handleResult, operation])
+    // useEffect(() => {
+    //     document.addEventListener('keydown', function(e) {
+    //         if(e.key === 'Backspace') {
+    //             const newOperation = operation.length ? operation.substring(0, operation.length -1) : operation;
+    //             setOperation(newOperation);
+    //             return;
+    //         }
+    //         if(!/[\d-+/*=]/.test(e.key)) {
+    //             return;
+    //         }
+    //         if(e.key === '=') {
+    //             handleResult();
+    //         } else {
+    //            setOperation(`${operation}${e.key}`);
+    //         }
+    //     });
+    // }, [ handleResult, operation])
     return(
         <div ref={ref}>
-            <input type="text" aria-label="result" className="sum" onChange={handleChange} placeholder={0} value={operation} />
-                <div className="grid-container">
+        <input type="text" aria-label="result" className="sum" onChange={handleChange} placeholder={0} value={operation} />
+            <div className="grid-container">
                     <button name="seven" className="grid-item" value={7} onClick={onClick}>7</button>
                     <button className="grid-item" value={8} onClick={onClick}>8</button>
                     <button className="grid-item" value={9} onClick={onClick}>9</button>
@@ -115,8 +118,8 @@ const Calculator = () => {
                     <button className="action" value="RESET" style={{backgroundColor:"#647299",color:"white"}} onClick={handleReset}>RESET</button>
                     <button className="action" value="=" style={{backgroundColor:"red"}} onClick={handleResult}>=</button> 
                 </div>
-        </div>
+            </div>
     )
 }
 
-export default Calculator;
+export default Keyboard;
