@@ -4,7 +4,7 @@ const Keyboard = () => {
     const ref = useRef();
     const [operation, setOperation] = useState("");
     const onClick = (e) => {
-            const math = `${e.target.value}${operation}`; 
+            const math = `${operation}${e.target.value}`; 
             setOperation(math);
             console.log(operation, e.target.value)
     }
@@ -23,7 +23,7 @@ const Keyboard = () => {
             setOperation(e.target.value);
             console.log(operation)
         } else {
-            const number = +operation.slice(operatorIndex+1);
+            const number = operation.slice(operatorIndex+1);
             const regex1 = new RegExp(/[0-9]/, 'g' );
             const isNumber = regex1.test(number);
             if(isNumber) {
